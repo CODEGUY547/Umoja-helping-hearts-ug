@@ -29,6 +29,26 @@
   const heroVideoToggle = document.getElementById('heroVideoToggle');
   let heroVideoPaused = false;
   if (heroVideo && heroVideoToggle) {
+    let videoRevealTimer;
+    const revealHeroVideo = () => {
+      window.clearTimeout(videoRevealTimer);
+      heroVideo.classList.add('is-ready');
+    };
+
+    heroVideo.addEventListener('load', () => {
+      videoRevealTimer = window.setTimeout(revealHeroVideo, 2500);
+    }, { once: true });
+
+    window.addEventListener('message', (event) => {
+      if (event.source !== heroVideo.contentWindow) return;
+      let message = event.data;
+      if (typeof message === 'string') {
+        try { message = JSON.parse(message); } catch (_) { return; }
+      }
+      const playerState = message && message.info && message.info.playerState;
+      if (message && (message.event === 'onReady' || playerState === 1)) revealHeroVideo();
+    });
+
     heroVideoToggle.addEventListener('click', () => {
       heroVideoPaused = !heroVideoPaused;
       heroVideo.contentWindow.postMessage(JSON.stringify({
