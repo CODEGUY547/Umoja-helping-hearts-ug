@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Choose a Umoja Helping Hearts Uganda project and continue to secure donation checkout.">
+  <meta name="theme-color" content="#173f89">
+  <title>Choose Your Project — Donate to Umoja Helping Hearts Uganda</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="donation-body">
+  <a class="skip-link" href="#donationForm">Skip to donation options</a>
+  <header class="donation-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html" aria-label="Return to Umoja Helping Hearts Uganda home">
+        <img src="assets/umoja-logo.png" alt="Umoja Helping Hearts Uganda logo">
+        <span><strong>Umoja Helping Hearts</strong><small>Uganda</small></span>
+      </a>
+      <a class="back-link" href="index.html#programs"><span aria-hidden="true">←</span> Back to projects</a>
+    </div>
+  </header>
+
+  <main class="donation-main">
+    <div class="container donation-shell">
+      <section class="donation-story" aria-labelledby="donationProjectTitle">
+        <img id="donationProjectImage" src="assets/education.jpg" alt="Children gathered during an education support activity">
+        <div class="donation-story-copy">
+          <p class="chapter-label" id="donationProjectNumber">Project 01</p>
+          <h1 id="donationProjectTitle">Education</h1>
+          <p id="donationProjectStory">Help remove practical barriers so children can remain in class and continue towards their ambitions.</p>
+        </div>
+      </section>
+
+      <section class="donation-form-wrap" id="donationForm">
+        <p class="eyebrow"><span></span> Your gift, your intention</p>
+        <h2>Choose where you want to help.</h2>
+        <p>Your selected project will stay visible before you continue to Umoja’s secure Flutterwave payment page.</p>
+
+        <form class="donation-form" id="projectDonationForm">
+          <label class="field-label" for="donationProject">I want to support</label>
+          <select class="project-select" id="donationProject" name="project">
+            <option value="education">Education</option>
+            <option value="water">Clean water</option>
+            <option value="construction">Construction</option>
+            <option value="food">Food support</option>
+            <option value="emergency">Emergency relief</option>
+            <option value="livelihoods">Livelihoods</option>
+            <option value="cash">Cash relief</option>
+            <option value="seasonal">Iftar & Qurbani</option>
+            <option value="general">Where it is needed most</option>
+          </select>
+
+          <div class="designation-card" aria-live="polite">
+            <span>Donation intention</span>
+            <strong id="designationTitle">Education</strong>
+            <p id="designationText">Supporting access to school, learning materials and mentorship.</p>
+          </div>
+
+          <a class="button checkout-button" id="secureCheckout" href="https://flutterwave.com/donate/2vvbdrno1lrt" target="_blank" rel="noopener">Continue to secure payment</a>
+          <p class="secure-note"><span aria-hidden="true">✓</span> Payment details are entered only on Flutterwave. Umoja’s website does not collect your card or mobile-money information.</p>
+        </form>
+
+        <p class="donation-help">Need help before donating? <a href="mailto:info@umojahelpingheartsug.org?subject=Donation%20support">Contact the Umoja team</a> or call <a href="tel:+256782883882">+256 782 883 882</a>.</p>
+      </section>
+    </div>
+  </main>
+
+  <script src="donate.js"></script>
+</body>
+</html>
